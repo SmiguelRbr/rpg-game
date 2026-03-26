@@ -29,7 +29,7 @@ export default function PhaserGame() {
 
     useEffect(() => {
         if (!telaInicial && typeof window !== 'undefined') {
-            socketRef.current = io('http://10.91.226.94:3001'); // LEMBRA-TE DE MUDAR O IP
+           socketRef.current = io(process.env.NEXT_PUBLIC_SOCKET_URL);; // LEMBRA-TE DE MUDAR O IP
             const socket = socketRef.current;
 
             socket.on('chatNovaMensagem', (msg) => {
