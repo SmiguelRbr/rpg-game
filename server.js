@@ -178,9 +178,9 @@ app.prepare().then(() => {
     }, 150); // 🔥 melhor que 100
 
     // NEXT ROUTES
-    expressApp.all('/*', (req, res) => {
-        return handle(req, res);
-    });
+    expressApp.all(/.*/, (req, res) => {
+    return handle(req, res);
+});
 
     server.listen(PORT, () => {
         console.log('Rodando na porta', PORT);
