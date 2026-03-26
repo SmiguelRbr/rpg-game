@@ -178,7 +178,7 @@ app.prepare().then(() => {
     }, 150); // 🔥 melhor que 100
 
     // NEXT ROUTES
-    expressApp.all('*', (req, res) => {
+    expressApp.all('/*', (req, res) => {
         return handle(req, res);
     });
 
